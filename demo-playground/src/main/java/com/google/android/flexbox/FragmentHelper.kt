@@ -135,9 +135,14 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         }
     }
 
-    private fun initializeSpinner(currentValue: Int, menuItemId: Int, navigationMenu: Menu,
-                                  arrayResourceId: Int, listener: AdapterView.OnItemSelectedListener,
-                                  converter: ValueToStringConverter) {
+    private fun initializeSpinner(
+        currentValue: Int,
+        menuItemId: Int,
+        navigationMenu: Menu,
+        arrayResourceId: Int,
+        listener: AdapterView.OnItemSelectedListener,
+        converter: ValueToStringConverter
+    ) {
         val spinner = navigationMenu.findItem(menuItemId).actionView as Spinner
         val adapter = ArrayAdapter.createFromResource(activity,
                 arrayResourceId, R.layout.spinner_item)
@@ -152,8 +157,12 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         initializeSpinner(flexContainer.flexDirection, R.id.menu_item_flex_direction,
                 navigationMenu, R.array.array_flex_direction,
                 object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                                id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        ignored: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         flexContainer.flexDirection = when (parent.getItemAtPosition(position).toString()) {
                             ROW -> FlexDirection.ROW
                             ROW_REVERSE -> FlexDirection.ROW_REVERSE
@@ -183,8 +192,12 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         initializeSpinner(flexContainer.flexWrap, R.id.menu_item_flex_wrap,
                 navigationMenu, R.array.array_flex_wrap,
                 object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                                id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        ignored: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         flexContainer.flexWrap = when (parent.getItemAtPosition(position).toString()) {
                             NOWRAP -> FlexWrap.NOWRAP
                             WRAP -> FlexWrap.WRAP
@@ -219,8 +232,12 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         initializeSpinner(flexContainer.justifyContent, R.id.menu_item_justify_content,
                 navigationMenu, R.array.array_justify_content,
                 object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                                id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        ignored: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         flexContainer.justifyContent = when (parent.getItemAtPosition(position).toString()) {
                             FLEX_START -> JustifyContent.FLEX_START
                             FLEX_END -> JustifyContent.FLEX_END
@@ -254,8 +271,12 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         initializeSpinner(flexContainer.alignItems, R.id.menu_item_align_items,
                 navigationMenu, R.array.array_align_items,
                 object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                                id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        ignored: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         flexContainer.alignItems = when (parent.getItemAtPosition(position).toString()) {
                             FLEX_START -> AlignItems.FLEX_START
                             FLEX_END -> AlignItems.FLEX_END
@@ -287,8 +308,12 @@ internal class FragmentHelper(private val activity: MainActivity, private val fl
         initializeSpinner(flexContainer.alignContent, R.id.menu_item_align_content,
                 navigationMenu, R.array.array_align_content,
                 object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                                id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        ignored: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         if (flexContainer is FlexboxLayoutManager) {
                             Toast.makeText(activity, R.string.align_content_not_supported,
                                     Toast.LENGTH_SHORT).show()

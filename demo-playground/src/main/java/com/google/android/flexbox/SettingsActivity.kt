@@ -124,6 +124,5 @@ internal class SettingsActivity : FragmentActivity() {
                 true
             }
         }
-
     }
 }

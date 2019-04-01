@@ -3968,8 +3968,10 @@ class FlexboxAndroidTest {
     }
 
     @Throws(Throwable::class)
-    private fun createFlexboxLayout(@LayoutRes activityLayoutResId: Int,
-                                    configuration: Configuration = Configuration.EMPTY): FlexboxLayout {
+    private fun createFlexboxLayout(
+        @LayoutRes activityLayoutResId: Int,
+        configuration: Configuration = Configuration.EMPTY
+    ): FlexboxLayout {
         val activity = activityRule.activity
         activityRule.runOnUiThread {
             activity.setContentView(activityLayoutResId)

@@ -23,8 +23,11 @@ import android.view.View
  * Implementation of the [android.view.View.OnClickListener] when a flex item is clicked in
  * the Flexbox Playground demo app.
  */
-internal class FlexItemClickListener(private val activity: AppCompatActivity, private val flexItemChangedListener: FlexItemChangedListener,
-                                     private val viewIndex: Int) : View.OnClickListener {
+internal class FlexItemClickListener(
+    private val activity: AppCompatActivity,
+    private val flexItemChangedListener: FlexItemChangedListener,
+    private val viewIndex: Int
+) : View.OnClickListener {
 
     override fun onClick(v: View) =
             FlexItemEditFragment.newInstance(v.layoutParams as FlexItem, viewIndex).apply {

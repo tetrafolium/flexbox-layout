@@ -33,8 +33,11 @@ internal class RecyclerViewFragment : Fragment() {
 
     private lateinit var adapter: FlexItemAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_recyclerview, container, false)
     }
 
@@ -48,7 +51,7 @@ internal class RecyclerViewFragment : Fragment() {
         adapter = FlexItemAdapter(activity, flexboxLayoutManager)
         recyclerView.adapter = adapter
         if (savedInstanceState != null) {
-            val layoutParams : List<FlexboxLayoutManager.LayoutParams>? = savedInstanceState
+            val layoutParams: List<FlexboxLayoutManager.LayoutParams>? = savedInstanceState
                     .getParcelableArrayList(FLEX_ITEMS_KEY)
             layoutParams?.let {
                 for (i in layoutParams.indices) {

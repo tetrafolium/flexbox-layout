@@ -86,8 +86,11 @@ internal class FlexItemEditFragment : DialogFragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_flex_item_edit, container, false)
         dialog.setTitle((viewIndex + 1).toString())
 
@@ -138,7 +141,7 @@ internal class FlexItemEditFragment : DialogFragment() {
                         R.string.must_be_minus_one_or_minus_two_or_non_negative_integer))
 
         val heightInput: TextInputLayout = view.findViewById(R.id.input_layout_height)
-        val heightEdit: EditText= view.findViewById(R.id.edit_text_height)
+        val heightEdit: EditText = view.findViewById(R.id.edit_text_height)
         heightEdit.setText(context.pixelToDp(flexItem.height).toString())
         heightEdit.addTextChangedListener(
                 FlexEditTextWatcher(context, heightInput, DimensionInputValidator(),
@@ -180,8 +183,12 @@ internal class FlexItemEditFragment : DialogFragment() {
                 R.array.array_align_self, R.layout.spinner_item)
         alignSelfSpinner.adapter = arrayAdapter
         alignSelfSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, ignored: View?, position: Int,
-                                        id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                ignored: View?,
+                position: Int,
+                id: Long
+            ) {
                 flexItemInEdit.alignSelf = when (parent.getItemAtPosition(position).toString()) {
                     alignSelfAuto -> AlignSelf.AUTO
                     alignSelfFlexStart -> AlignItems.FLEX_START
@@ -244,9 +251,9 @@ internal class FlexItemEditFragment : DialogFragment() {
             textViews[i].setOnEditorActionListener { v, actionId, event ->
                 if (actionId == EditorInfo.IME_ACTION_NEXT ||
                         actionId == EditorInfo.IME_ACTION_DONE ||
-                        actionId == EditorInfo.IME_NULL
-                                && event.action == KeyEvent.ACTION_DOWN
-                                && event.keyCode == KeyEvent.KEYCODE_ENTER) {
+                        actionId == EditorInfo.IME_NULL &&
+                                event.action == KeyEvent.ACTION_DOWN &&
+                                event.keyCode == KeyEvent.KEYCODE_ENTER) {
                     if (i + 1 < textViews.size) {
                         textViews[i + 1].requestFocus()
                     } else if (i == textViews.size - 1) {
@@ -261,7 +268,6 @@ internal class FlexItemEditFragment : DialogFragment() {
             // Suppress the key focus change by KeyEvent.ACTION_UP of the enter key
             textViews[i].setOnKeyListener { _, keyCode, event -> keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP }
         }
-
     }
 
     private fun alignSelfAsString(alignSelf: Int): String {
@@ -276,10 +282,12 @@ internal class FlexItemEditFragment : DialogFragment() {
         }
     }
 
-    private inner class FlexEditTextWatcher internal constructor(val context: Context,
-                                                                 val textInputLayout: TextInputLayout,
-                                                                 val inputValidator: InputValidator,
-                                                                 val errorMessageId: Int) : TextWatcher {
+    private inner class FlexEditTextWatcher internal constructor(
+        val context: Context,
+        val textInputLayout: TextInputLayout,
+        val inputValidator: InputValidator,
+        val errorMessageId: Int
+    ) : TextWatcher {
 
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             // No op

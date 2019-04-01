@@ -479,7 +479,6 @@ class FlexboxLayoutManagerTest {
         assertThat(layoutManager.getChildAt(2).right, isEqualAllowingError(activity.dpToPixel(292)))
     }
 
-
     @Test
     @FlakyTest
     @Throws(Throwable::class)
@@ -3059,7 +3058,6 @@ class FlexboxLayoutManagerTest {
         val text2 = layoutManager.getChildAt(0) as TextView
         assertThat(text2.height, isEqualAllowingError(activity.dpToPixel(30)))
         assertThat(text2.width, isEqualAllowingError(activity.dpToPixel(100)))
-
     }
 
     @Test
@@ -3194,7 +3192,6 @@ class FlexboxLayoutManagerTest {
                 .forEach { assertThat(layoutManager.getTopDecorationHeight(it), `is`(0)) }
     }
 
-
     @Test
     @FlakyTest
     @Throws(Throwable::class)
@@ -3314,12 +3311,15 @@ class FlexboxLayoutManagerTest {
      * Creates a new flex item.
      *
      * @param context the context
-     * @param width   in DP
-     * @param height  in DP
+     * @param width in DP
+     * @param height in DP
      * @return the created [FlexboxLayoutManager.LayoutParams] instance
      */
-    private fun createLayoutParams(context: Context, width: Int,
-                                   height: Int): FlexboxLayoutManager.LayoutParams {
+    private fun createLayoutParams(
+        context: Context,
+        width: Int,
+        height: Int
+    ): FlexboxLayoutManager.LayoutParams {
         return FlexboxLayoutManager.LayoutParams(context.dpToPixel(width), context.dpToPixel(height))
     }
 

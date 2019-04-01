@@ -26,7 +26,8 @@ import com.google.android.flexbox.FlexboxLayoutManager
  * [RecyclerView.Adapter] implementation for [TestViewHolder].
  */
 internal class TestAdapter private constructor(
-        private val layoutParams: MutableList<FlexboxLayoutManager.LayoutParams>)
+    private val layoutParams: MutableList<FlexboxLayoutManager.LayoutParams>
+)
     : RecyclerView.Adapter<TestViewHolder>() {
 
     private val receivedPayloads = mutableListOf<Any>()

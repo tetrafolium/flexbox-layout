@@ -29,8 +29,9 @@ import com.google.android.flexbox.FlexboxLayoutManager
  * This Adapter is used for the outer RecyclerView.
  */
 internal class NestedOuterAdapter(
-        @param:FlexDirection private val flexDirection: Int, private val innerAdapterItemCount: Int,
-        @param:LayoutRes private val viewHolderResId: Int
+    @param:FlexDirection private val flexDirection: Int,
+    private val innerAdapterItemCount: Int,
+    @param:LayoutRes private val viewHolderResId: Int
 ) : RecyclerView.Adapter<NestedOuterAdapter.OuterViewHolder>() {
 
     private val viewHolderList = mutableListOf<OuterViewHolder>()

@@ -153,12 +153,15 @@ class FlexboxLayoutManagerConfigChangeTest {
      * Creates a new flex item.
      *
      * @param context the context
-     * @param width   in DP
-     * @param height  in DP
+     * @param width in DP
+     * @param height in DP
      * @return the created [FlexboxLayoutManager.LayoutParams] instance
      */
-    private fun createLayoutParams(context: Context, width: Int,
-                                   height: Int): FlexboxLayoutManager.LayoutParams {
+    private fun createLayoutParams(
+        context: Context,
+        width: Int,
+        height: Int
+    ): FlexboxLayoutManager.LayoutParams {
         return FlexboxLayoutManager.LayoutParams(context.dpToPixel(width), context.dpToPixel(height))
     }
 

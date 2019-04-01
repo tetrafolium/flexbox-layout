@@ -23,7 +23,7 @@ import android.content.Context
  * MATCH_PARENT(-1) and WRAP_CONTENT(-2).
  * Ignore the round error that might happen in dividing the pixel by the density.
  *
- * @param pixel   the value in pixel
+ * @param pixel the value in pixel
  *
  * @return the converted value in dp
  */
@@ -36,7 +36,7 @@ fun Context.pixelToDp(pixel: Int): Int {
  * Convert dp to pixel. Preserve the negative value as it's used for representing
  * MATCH_PARENT(-1) and WRAP_CONTENT(-2).
  *
- * @param dp      the value in dp
+ * @param dp the value in dp
  *
  * @return the converted value in pixel
  */

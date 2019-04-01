@@ -23,8 +23,10 @@ import android.view.ViewGroup
  * Implementation for the [FlexItemChangedListener].
  * It expects RecyclerView as the underlying flex container implementation.
  */
-internal class FlexItemChangedListenerImplRecyclerView(private val flexContainer: FlexContainer,
-                                              private val adapter: RecyclerView.Adapter<*>) : FlexItemChangedListener {
+internal class FlexItemChangedListenerImplRecyclerView(
+    private val flexContainer: FlexContainer,
+    private val adapter: RecyclerView.Adapter<*>
+) : FlexItemChangedListener {
 
     override fun onFlexItemChanged(flexItem: FlexItem, viewIndex: Int) {
         val view = flexContainer.getFlexItemAt(viewIndex)
